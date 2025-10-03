@@ -1,0 +1,27 @@
+using System;
+
+class Program {
+    static void Main() {
+        Random random = new Random();
+        int numeroSecreto = random.Next(1, 21); // número entre 1 e 20
+        int tentativa = 0;
+
+        Console.WriteLine("🎲 Jogo de Adivinhação 🎲");
+        Console.WriteLine("Tente adivinhar o número (entre 1 e 20):");
+
+        // Loop até acertar
+        while (tentativa != numeroSecreto) {
+            Console.Write("Digite sua tentativa: ");
+            tentativa = int.Parse(Console.ReadLine());
+
+            if (tentativa < numeroSecreto) {
+                Console.WriteLine("➡️ O número secreto é MAIOR!");
+            } else if (tentativa > numeroSecreto) {
+                Console.WriteLine("⬅️ O número secreto é MENOR!");
+            } else {
+                Console.WriteLine("✅ Parabéns! Você acertou!");
+            }
+        }
+    }
+}
+
